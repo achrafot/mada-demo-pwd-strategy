@@ -88,13 +88,13 @@ function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8 mr-auto pr-12">
           {navLinks.map((link) =>
             link.href.startsWith("/") ? (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[#8B1A4A] ${
+                className={`text-base font-medium transition-colors hover:text-[#8B1A4A] ${
                   scrolled ? "text-gray-700" : "text-white"
                 }`}
               >
@@ -104,7 +104,7 @@ function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[#8B1A4A] ${
+                className={`text-base font-medium transition-colors hover:text-[#8B1A4A] ${
                   scrolled ? "text-gray-700" : "text-white"
                 }`}
               >
@@ -204,7 +204,6 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-6xl font-black text-white leading-tight mb-4"
-            style={{ fontFamily: "'Cairo', sans-serif" }}
           >
             الاستراتيجية الوطنية
             <br />
@@ -786,7 +785,7 @@ function Footer() {
 // ─── Main Home Page ───────────────────────────────────────────
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Cairo', sans-serif" }}>
+    <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <StatsSection />

@@ -29,7 +29,7 @@ export default function PillarPage() {
   const nextPillar = currentIndex < pillars.length - 1 ? pillars[currentIndex + 1] : null;
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Cairo', sans-serif" }}>
+    <div className="min-h-screen bg-gray-50">
       {/* Top Nav Bar */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
         <div className="container flex items-center justify-between h-14">

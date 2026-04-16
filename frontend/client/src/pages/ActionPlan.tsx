@@ -639,7 +639,7 @@ export default function ActionPlan() {
   const totalProjects = projects.length;
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Cairo', sans-serif" }}>
+    <div className="min-h-screen bg-gray-50">
       {/* Top Nav */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
         <div className="container flex items-center justify-between h-14">

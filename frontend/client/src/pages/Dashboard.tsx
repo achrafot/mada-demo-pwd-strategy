@@ -424,18 +424,18 @@ function ComparisonBarChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 10, fontFamily: "Cairo", fill: "#6B7280" }}
+            tick={{ fontSize: 10, fontFamily: "Lusail", fill: "#6B7280" }}
             angle={-35}
             textAnchor="end"
             interval={0}
           />
-          <YAxis tick={{ fontSize: 10, fontFamily: "Cairo", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
+          <YAxis tick={{ fontSize: 10, fontFamily: "Lusail", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
           <Tooltip
-            contentStyle={{ fontFamily: "Cairo", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+            contentStyle={{ fontFamily: "Lusail", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
             formatter={(value: number) => [`${value}%`]}
           />
           <Legend
-            wrapperStyle={{ fontFamily: "Cairo", fontSize: 12, paddingTop: 16 }}
+            wrapperStyle={{ fontFamily: "Lusail", fontSize: 12, paddingTop: 16 }}
             formatter={(value) => `مستهدف ${value}`}
           />
           <Bar dataKey="2027" fill="#8B1A4A" radius={[4, 4, 0, 0]} />
@@ -465,10 +465,10 @@ function ProgressTimeline() {
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-          <XAxis dataKey="year" tick={{ fontSize: 11, fontFamily: "Cairo", fill: "#6B7280" }} />
-          <YAxis tick={{ fontSize: 11, fontFamily: "Cairo", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
+          <XAxis dataKey="year" tick={{ fontSize: 11, fontFamily: "Lusail", fill: "#6B7280" }} />
+          <YAxis tick={{ fontSize: 11, fontFamily: "Lusail", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
           <Tooltip
-            contentStyle={{ fontFamily: "Cairo", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+            contentStyle={{ fontFamily: "Lusail", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
             formatter={(value: number) => [`${value}%`, "الإنجاز الكلي"]}
           />
           <Area
@@ -499,10 +499,10 @@ function OutcomeTrendsChart({ selectedOutcomes }: { selectedOutcomes: number[] }
       <ResponsiveContainer width="100%" height={260}>
         <LineChart data={timelineData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-          <XAxis dataKey="year" tick={{ fontSize: 11, fontFamily: "Cairo", fill: "#6B7280" }} />
-          <YAxis tick={{ fontSize: 11, fontFamily: "Cairo", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
+          <XAxis dataKey="year" tick={{ fontSize: 11, fontFamily: "Lusail", fill: "#6B7280" }} />
+          <YAxis tick={{ fontSize: 11, fontFamily: "Lusail", fill: "#6B7280" }} domain={[0, 100]} unit="%" />
           <Tooltip
-            contentStyle={{ fontFamily: "Cairo", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+            contentStyle={{ fontFamily: "Lusail", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
             formatter={(value: number, name: string) => {
               const o = outcomes.find((x) => String(x.id) === name);
               return [`${value}%`, o?.title || name];
@@ -546,7 +546,7 @@ function StrategyRadarChart({ selectedYear }: { selectedYear: "2027" | "2029" | 
           <PolarGrid stroke="#E5E7EB" />
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fontSize: 10, fontFamily: "Cairo", fill: "#6B7280" }}
+            tick={{ fontSize: 10, fontFamily: "Lusail", fill: "#6B7280" }}
           />
           <Radar
             name={`مستهدف ${selectedYear}`}
@@ -557,7 +557,7 @@ function StrategyRadarChart({ selectedYear }: { selectedYear: "2027" | "2029" | 
             strokeWidth={2}
           />
           <Tooltip
-            contentStyle={{ fontFamily: "Cairo", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+            contentStyle={{ fontFamily: "Lusail", fontSize: 12, borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
             formatter={(value: number) => [`${value}%`]}
           />
         </RadarChart>
@@ -586,7 +586,7 @@ export default function Dashboard() {
   ] as const;
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Cairo', sans-serif" }}>
+    <div className="min-h-screen bg-gray-50">
       {/* Top Nav */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
         <div className="container flex items-center justify-between h-14">
