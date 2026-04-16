@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/Cairo-Arabic.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/Cairo-Latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html {
+  font-family: "Cairo", sans-serif;
+}
+
+/* 
+ * DESIGN SYSTEM: الاستراتيجية الوطنية للإعاقة 2026-2031
+ * Primary: Deep Maroon/Burgundy #8B1A4A (brand color from slides)
+ * Secondary: Steel Blue #2B5A7A (section headers)
+ * Background: White #FFFFFF
+ * Text: Dark Charcoal #1A1A1A
+ * Accent: Soft Rose #E8D5DC (watermark/decorative)
+ * Pillar Colors: Each pillar has unique color identity
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand Colors */
+  --brand-maroon: #8B1A4A;
+  --brand-maroon-light: #C4788A;
+  --brand-maroon-pale: #E8D5DC;
+  --brand-maroon-dark: #5C0F30;
+  --brand-teal: #2B5A7A;
+  --brand-teal-dark: #1B3A5A;
+
+  /* Pillar Colors */
+  --pillar-1: #4A6B8A;   /* التشريعات - Steel Blue */
+  --pillar-2: #3A7AB5;   /* التعليم - Sky Blue */
+  --pillar-3: #4A8B6A;   /* الصحة - Sage Green */
+  --pillar-4: #B89040;   /* التوظيف - Gold */
+  --pillar-5: #2A8B7A;   /* الوصول - Teal */
+  --pillar-6: #B56080;   /* الحماية - Rose */
+  --pillar-7: #7A6AB0;   /* التأهيل - Lavender */
+  --pillar-8: #6A4A8A;   /* الحوكمة - Purple */
+
+  /* Semantic Colors */
+  --primary: oklch(0.35 0.15 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.12 0.005 65);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.005 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.005 65);
+  --secondary: oklch(0.97 0.002 0);
+  --secondary-foreground: oklch(0.35 0.15 0);
+  --muted: oklch(0.96 0.005 0);
+  --muted-foreground: oklch(0.55 0.01 0);
+  --accent: oklch(0.94 0.01 0);
+  --accent-foreground: oklch(0.35 0.15 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.90 0.005 0);
+  --input: oklch(0.90 0.005 0);
+  --ring: oklch(0.35 0.15 0);
+  --chart-1: #8B1A4A;
+  --chart-2: #2B5A7A;
+  --chart-3: #4A8B6A;
+  --chart-4: #B89040;
+  --chart-5: #7A6AB0;
+  --sidebar: oklch(0.98 0.003 0);
+  --sidebar-foreground: oklch(0.12 0.005 65);
+  --sidebar-primary: oklch(0.35 0.15 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.94 0.01 0);
+  --sidebar-accent-foreground: oklch(0.35 0.15 0);
+  --sidebar-border: oklch(0.90 0.005 0);
+  --sidebar-ring: oklch(0.35 0.15 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* Arch Decorative Element - Qatari Motif */
+  .arch-motif {
+    position: relative;
+  }
+  .arch-motif::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(to bottom, var(--brand-maroon-pale), transparent);
+    clip-path: polygon(0 0, 60% 0, 60% 100%, 0 100%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Section title style matching slides */
+  .section-title {
+    color: var(--brand-maroon);
+    font-weight: 800;
+    text-align: right;
+  }
+
+  /* Pillar card hover */
+  .pillar-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  }
+
+  /* Animated counter */
+  .counter-value {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Progress bar animation */
+  @keyframes progressFill {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+  }
+
+  .progress-animated {
+    animation: progressFill 1.5s ease-out forwards;
+  }
+
+  /* Fade up animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+}
